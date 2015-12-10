@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Paris Scramble</title>
+	<link type="text/css" rel="stylesheet" href="css/style.css"/>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+</head>
+<body>
+
+<div id="container">
+	<div class="roof"></div
+	><div class="light"></div
+	><div class="roof"></div
+	><div class="light"></div
+	><div class="roof"></div
+	><div class="light"></div
+	><div class="roof"></div
+	><div class="light"></div
+	><div class="roof"></div
+	><div class="light"></div
+	><div class="roof"></div
+	><div class="light"></div
+	><div class="roof"></div
+	><div class="light"></div
+	><div id="nature">
+	<img src="images/sun.png" class="sun" alt="sun"/>
+	<div id="sun"></div>
+	<img src="images/eiffel.png" class="eiffel" alt="eiffel"/>
+	<img src="images/dog.png" class="dog" alt="dog"/>
+	<img src="images/children.png" class="children" alt="children"/>
+	<div id="balloon"><img src="images/balloon.png" width="100" alt="balloon"/></div>
+	</div>
+	<div id="window"><img src="images/sign.png" alt="window"/></div>
+	<img src="images/flower.png" class="flower" alt="flower"/>
+	<img src="images/flower2.png" class="flower2" alt="flower2"/>
+	<img src="images/flower3.png" class="flower3" alt="flower3"/>
+	<img src="images/flower4.png" class="flower4" alt="flower4"/>
+	<img src="images/flower5.png" class="flower5" alt="flower5"/>
+</div>
+
+<div id="sidewalk">
+	<hr width="1" size="400" class="hr">
+	<hr width="1" size="400" class="hr2">
+	<hr width="1" size="400" class="hr3">
+	<hr width="1" size="400" class="hr4">
+	<hr width="1" size="400" class="hr5">
+	<img src="images/chairs.png" class="chairs" alt="chairs"/>
+	<div class="stomach"></div>
+	<div class="head"></div>
+	<div class="paw"></div>
+	<div class="paw2"></div>
+	<div class="foot"></div>
+	<div class="foot2"></div>
+	<div class="eye"></div>
+	<div class="eye2"></div>
+	<div class="nose"></div>
+	<div class="speaking"></div>
+	<div class="ear"></div>
+	<div class="ear2"></div>
+	<div class="whisker"></div>
+	<div class="whisker2"></div>
+	<div class="whisker3"></div>
+	<div class="whisker4"></div>
+	<div class="tail"></div>
+	<div class="smile"></div>
+	<div class="frown"></div>
+	<div id="backpack"><img src="images/backpack.png" width="30" alt="backpack"/></div>
+	<div id="bubble"><img src="images/bubble.png" width="40" alt="bubble" onmousedown="accept.play()"/></div>
+</div>
+
+<div id="box">
+	<div class="stomach_mouse"></div>
+	<div class="head_mouse"></div>
+	<div class="paw_mouse"></div>
+	<div class="paw2_mouse"></div>
+	<div class="foot_mouse"></div>
+	<div class="foot2_mouse"></div>
+	<div class="eye_mouse"></div>
+	<div class="eye2_mouse"></div>
+	<div class="nose_mouse"></div>
+	<div class="speaking_mouse"></div>
+	<div class="ear_mouse"></div>
+	<div class="ear2_mouse"></div>
+	<div class="whisker_mouse"></div>
+	<div class="whisker2_mouse"></div>
+	<div class="whisker3_mouse"></div>
+	<div class="whisker4_mouse"></div>
+	<div class="tail_mouse"></div>
+	<div id='text_mouse'><font color="#990033"><strong><em>"...Squeak...Thank you...Squeak!"</em></strong></font><br><p>The mouse wants to give you a present as a token of friendship. He seems elated!</p></div>
+	<div id="button" onmousedown="paper.play()">(Take gift)</div>
+	<div id="note"><img src="images/note.png" width="100" alt="note"/></div>
+	<div id="question_mark"><img src="images/questionmark.png" width="60" alt="questionmark"/></div>
+</div>
+
+<div id="black"><img src="images/black.png" width="2000" alt="black"/></div>
+<div id="note2"><img src="images/note2.png" width="400" alt="note2"/></div>
+<div class="btn" onmousedown="paper.play()">Return</div>
+
+<script>
+$(document).ready(function(){
+
+$('#black').fadeOut(2000);
+
+function bounceLoop() {
+	$('.stomach, .head, .paw, .paw2, .foot, .foot2, .eye, .eye2, .nose, .mouth, .ear, .ear2, .whisker, .whisker2, .whisker3, .whisker4, .tail, .frown, .smile').effect("bounce", { times: 2, distance: 50 }, 1000);
+	setTimeout(bounceLoop, 4000);
+}
+bounceLoop();
+
+	$('#bubble').click(function(){
+		$('#box').show();
+	});
+
+	$('#button').click(function(){
+		$('#box').hide();
+		$('#bubble').hide();
+		$('#note2').show();
+		$('#black').show();
+		$('.btn').show();
+
+	$('.btn').click(function(){
+		$('#note2').hide();
+		$('#black').hide();
+		$('.btn').hide();
+	});
+});
+});
+
+var accept = new Audio ();
+accept.src = "sounds/pop.mp3";
+
+var paper = new Audio ();
+paper.src = "sounds/paper.mp3";
+
+</script>
+
+<audio loop autoplay>
+	<source src="sounds/cafemusic.mp3" type="audio/mp3">
+</audio>
+
+</body>
+</html>
